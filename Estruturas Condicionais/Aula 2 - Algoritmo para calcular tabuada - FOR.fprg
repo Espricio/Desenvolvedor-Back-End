@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="mayco"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-07-02 08:01:45 "/>
+        <attribute name="created" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDE7IjExOjQyOjU0ICI7Mjc0MQ=="/>
+        <attribute name="edited" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDI7IjA4OjAxOjQ1ICI7MjsyODUy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="contador, tabuada" type="Integer" array="False" size=""/>
+            <comment text="Declara a vari&#225;vel contador para fazer a contagem da repeti&#231;&#227;o. Declara a vari&#225;vel tabuada para armazenar qual ser&#225; a tabuada escolhida"/>
+            <output expression="&quot;Digite a tabuada desejada:&quot;" newline="True"/>
+            <input variable="tabuada"/>
+            <for variable="contador" start="1" end="10" direction="inc" step="1">
+                <comment text="Looping far&#225; a contagem da multiplica&#231;&#227;o da tabuada at&#233; 10 n&#250;meros."/>
+                <output expression="tabuada&amp;&quot;*&quot;&amp;contador&amp;&quot;=&quot;&amp;tabuada*contador" newline="True"/>
+                <comment text="Concatena a mensagem mostrando o resultado de cada opera&#231;&#227;o matem&#225;tica. A opera&#231;&#227;o multiplica a tabuada recebida pelo usu&#225;rio pela vari&#225;vel contador."/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

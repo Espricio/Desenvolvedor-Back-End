@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Calculadora"/>
+        <attribute name="authors" value="Maycon"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-07-03 03:08:24 "/>
+        <attribute name="created" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDE7IjEwOjQ5OjQ3ICI7Mjc0OQ=="/>
+        <attribute name="edited" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDM7IjAzOjA3OjI1ICI7MTttYXljbztERVNLVE9QLUU3MTM1TU87MjAyNC0wNy0wMTsiMTE6NTM6MjUgIjtBdWxhIDMgLSBBbGdvcml0bW8gZGUgY2FsY3VsYWRvcmEgY29tIGZ1bmNvZXMuZnByZzsxMDI1OA=="/>
+        <attribute name="edited" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDM7IjAzOjA4OjI0ICI7NzsyODU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1, num2" type="Real" array="False" size=""/>
+            <comment text="Vari&#225;veis num1 e num2 armazenam os valores da opera&#231;&#227;o."/>
+            <declare name="operacao, repeticao" type="String" array="False" size=""/>
+            <comment text="A vari&#225;vel operacao armazena qual a opera&#231;&#227;o que ser&#225; realizada. A vari&#225;vel repeticao verifica se o us&#225;rio deseja realizar mais alguma opera&#231;&#227;o."/>
+            <do expression="repeticao=&quot;s&quot; or repeticao&lt;&gt;&quot;n&quot;">
+                <output expression="&quot;Digite o primeiro n&#250;mero:&quot;" newline="True"/>
+                <input variable="num1"/>
+                <output expression="&quot;Digite a opera&#231;&#227;o desejada: + para soma; - para subtra&#231;&#227;o; * para multiplica&#231;&#227;o; / para divis&#227;o&quot;" newline="True"/>
+                <input variable="operacao"/>
+                <output expression="&quot;Digite o segundo n&#250;mero:&quot;" newline="True"/>
+                <input variable="num2"/>
+                <while expression="operacao&lt;&gt;&quot;+&quot; and operacao&lt;&gt;&quot;-&quot; and operacao &lt;&gt;&quot;*&quot; and operacao&lt;&gt;&quot;/&quot;">
+                    <comment text="Enquanto a opera&#231;&#227;o n&#227;o for uma das opera&#231;&#245;es permitidas o algoritmo ir&#225; pedir uma v&#225;lida"/>
+                    <output expression="&quot;Opera&#231;&#227;o indispon&#237;vel, insira uma opera&#231;&#227;o v&#225;lida (+ para soma; - para subtra&#231;&#227;o; * para multiplica&#231;&#227;o; / para divis&#227;o):&quot;" newline="True"/>
+                    <input variable="operacao"/>
+                </while>
+                <if expression="operacao=&quot;+&quot;">
+                    <then>
+                        <output expression="num1+num2" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="operacao=&quot;-&quot;">
+                            <then>
+                                <output expression="num1-num2" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="operacao=&quot;/&quot;">
+                                    <then>
+                                        <output expression="num1/num2" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="operacao=&quot;*&quot;">
+                                            <then>
+                                                <output expression="num1*num2" newline="True"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;Deseja realizar mais alguma opera&#231;&#227;o? Digite s para sim e n para n&#227;o&quot;" newline="True"/>
+                <input variable="repeticao"/>
+                <comment text="Verifica se o usu&#225;rio deseja realizar mais alguma opera&#231;&#227;o e armazena a resposta na vari&#225;vel repeticao. Caso o valor da vari&#225;vel seja igual a &quot;s&quot; ele repete o processo, caso seja &quot;n&quot; ele sa&#237; do looping. Contudo, caso seja um caracter diferente o looping se repete."/>
+            </do>
+            <comment text="S&#243; sa&#237;ra da repeti&#231;&#227;o caso digite n, qualquer outra resposta o programa entrar&#225; no looping"/>
+        </body>
+    </function>
+</flowgorithm>

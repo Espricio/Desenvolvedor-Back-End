@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="mayco"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-07-02 07:52:53 "/>
+        <attribute name="created" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDE7IjA4OjQ4OjM5ICI7Mjc1Ng=="/>
+        <attribute name="edited" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDI7IjA3OjUyOjUzICI7MzsyODU3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="maioridade" type="String" array="False" size=""/>
+            <comment text="Declara uma vari&#225;vel de texto chamada &quot;maioridade&quot; para armazenar a mensagem sobre a maioridade"/>
+            <declare name="idade" type="Integer" array="False" size=""/>
+            <comment text="Declara uma vari&#225;vel inteira chamada &quot;idade&quot; para armazenar a idade do usu&#225;rio"/>
+            <output expression="&quot;Insira sua idade:&quot;" newline="True"/>
+            <comment text="Solicita ao usu&#225;rio que insira sua idade"/>
+            <input variable="idade"/>
+            <comment text="L&#234; a idade inserida pelo usu&#225;rio e a armazena na vari&#225;vel &quot;idade&quot;"/>
+            <comment text="Verifica se a idade inserida &#233; maior ou igual a 18"/>
+            <if expression="Idade&gt;=18">
+                <then>
+                    <comment text="Se a condi&#231;&#227;o for verdadeira, atribui a mensagem &quot;Voc&#234; &#233; de maior&quot; &#224; vari&#225;vel &quot;maioridade&quot;"/>
+                    <assign variable="maioridade" expression="&quot;Voc&#234; &#233; de maior&quot;"/>
+                </then>
+                <else>
+                    <comment text="Se a condi&#231;&#227;o for falsa, atribui a mensagem &quot;Voc&#234; &#233; de menor&quot; &#224; vari&#225;vel &quot;maioridade&quot;"/>
+                    <assign variable="maioridade" expression="&quot;Voc&#234; &#233; de menor&quot;"/>
+                </else>
+            </if>
+            <comment text="Escreve a mensagem armazenada na vari&#225;vel &quot;maioridade&quot; na tela"/>
+            <output expression="maioridade" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
