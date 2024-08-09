@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="mayco"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-07-02 08:17:46 "/>
+        <attribute name="created" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDI7IjExOjE4OjQ4ICI7Mjc0OA=="/>
+        <attribute name="edited" value="bWF5Y287REVTS1RPUC1FNzEzNU1POzIwMjQtMDctMDI7IjA4OjE3OjQ2ICI7MjsyODYw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="qtdNotas" type="Integer" array="False" size=""/>
+            <comment text="A vari&#225;vel qtdNotas armazena quantas notas o professor deseja adicionar para o aluno"/>
+            <output expression="&quot;Digite a quantidade de notas:&quot;" newline="True"/>
+            <input variable="qtdNotas"/>
+            <declare name="notas" type="Real" array="True" size="qtdNotas"/>
+            <comment text="A vari&#225;vel notas tem um vetor com tamanho da quantidade de notas que o professor solicitou. Lembrando que para o vetor a primeira casa tem como refer&#234;ncia o n&#250;mero zero."/>
+            <declare name="soma, media" type="Real" array="False" size=""/>
+            <comment text="A vari&#225;vel soma ir&#225; armazenar a soma total das notas. A vari&#225;vel media ir&#225; armazenar o c&#225;lculo da m&#233;dia das notas."/>
+            <assign variable="soma" expression="0"/>
+            <assign variable="media" expression="0"/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <comment text="A vari&#225;vel contador far&#225; a contagem da quantidade de notas dentro do looping."/>
+            <for variable="contador" start="0" end="qtdNotas-1" direction="inc" step="1">
+                <comment text="O looping far&#225; a contagem at&#233; a quantidade de notas menos 1, para que considere a refer&#234;ncia prim&#225;ria 0 do vetor."/>
+                <output expression="&quot;Digite a nota &quot;&amp;contador+1&amp;&quot; do aluno:&quot;" newline="True"/>
+                <input variable="notas[contador]"/>
+                <comment text="Faz a leitura da respectiva nota do aluno dentro da vari&#225;vel vetor notas. A vari&#225;vel contador auxilia em qual local do vetor ser&#225; adiocinada a nota."/>
+            </for>
+            <for variable="contador" start="0" end="qtdNotas-1" direction="inc" step="1">
+                <assign variable="soma" expression="soma+notas[contador]"/>
+                <comment text="A vari&#225;vel soma recebe o valor da soma anterior acrescido do valor da nota na posi&#231;&#227;o que o vetor se encontra."/>
+            </for>
+            <assign variable="media" expression="soma/qtdNotas"/>
+            <comment text="A vari&#225;vel media recebe o calculo da soma das notas dividido pela quantidade delas."/>
+            <output expression="&quot;A m&#233;dia do aluno foi:&quot;&amp;media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
